@@ -9,7 +9,7 @@
     @if(auth()->user()->role != "loaner")
     <button class="btn btn-info" onclick="window.print()">Print</button>
     @endif
-    <div class="card card-bordered card-preview mt-2">
+    <div class="card card-bordered card-preview mt-2 bg-info">
         <div class="card-inner">
             <div class="preview-block">
  

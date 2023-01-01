@@ -6,7 +6,10 @@
             <h4 class="nk-block-title">Payment from {{ $payment->user->full_name }}</h4>
         </div>
     </div>
-    <div class="card card-bordered card-preview mt-2">
+    @if(auth()->user()->role != "loaner")
+    <button class="btn btn-info" onclick="window.print()">Print</button>
+    @endif
+    <div class="card card-bordered card-preview mt-2 bg-info">
         <div class="card-inner">
             <div class="preview-block">
                 <span class="preview-title-lg overline-title">Payment</span>

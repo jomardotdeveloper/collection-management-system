@@ -12,7 +12,7 @@
         <a href="{{ route('clients.edit', ['client' => $client]) }}" class="btn btn-success">Edit</a>
         <button type="submit" class="btn btn-danger">Delete</button>
     </form>
-    <div class="card card-bordered card-preview mt-2">
+    <div class="card card-bordered card-preview mt-2 bg-info">
         <div class="card-inner">
             <div class="preview-block">
                 <span class="preview-title-lg overline-title">Client Personal Information</span>

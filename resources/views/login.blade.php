@@ -16,7 +16,7 @@
     <link id="skin-default" rel="stylesheet" href="./assets/css/theme.css?ver=3.0.0">
 </head>
 
-<body class="nk-body bg-white npc-general pg-auth">
+<body class="nk-body bg-white npc-general pg-auth" style="background-image: url('{{ asset('images/banner08.jpg') }}');background-repeat: no-repeat;background-size: cover;">
     <div class="nk-app-root">
         <!-- main @s -->
         <div class="nk-main ">
@@ -30,6 +30,7 @@
                                 <img class="logo-light logo-img logo-img-lg" src="./images/asaicon.png" srcset="./images/asaicon.png 2x" alt="logo">
                                 <img class="logo-dark logo-img logo-img-lg" src="./images/asaicon.png" srcset="./images/asaicon.png 2x" alt="logo-dark">
                             </a>
+                            <h3 class="mt-2 text-light">ASA Philippines Foundation Inc.</h3>
                         </div>
                         <div class="card card-bordered">
                             <div class="card-inner card-inner-lg">

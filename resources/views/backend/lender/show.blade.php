@@ -14,7 +14,7 @@
         <button type="submit" class="btn btn-danger">Delete</button>
     </form>
     {{-- <a href="{{ route('lenders.destroy', ['lender' => $lender]) }}" class="btn btn-success">Delete</a> --}}
-    <div class="card card-bordered card-preview mt-2">
+    <div class="card card-bordered card-preview mt-2 bg-info">
         <div class="card-inner">
             <div class="preview-block">
                 <span class="preview-title-lg overline-title">Lender</span>

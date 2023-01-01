@@ -6,7 +6,7 @@
             <h4 class="nk-block-title">New record</h4>
         </div>
     </div>
-    <div class="card card-bordered card-preview mt-2">
+    <div class="card card-bordered card-preview mt-2 bg-info">
         <div class="card-inner">
             <div class="preview-block">
                 <span class="preview-title-lg overline-title">Lender</span>
