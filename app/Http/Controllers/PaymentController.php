@@ -70,7 +70,7 @@ class PaymentController extends Controller
             $response = Http::post('https://api.semaphore.co/api/v4/messages', [
                 'apikey' => 'c5a7b2b3099bd6768aeccc057052f5ad',
                 'number' => $user->contact_no,
-                'message' => "Pumasok na ang bayad mo",
+                'message' => "Natanggap na po ang iyong bayad ng Asa Philippines Magpet. Maraming Salamat.",
                 'sendername' => 'SEMAPHORE'
             ]);
        
