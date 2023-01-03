@@ -68,9 +68,9 @@ class PaymentController extends Controller
 
         if($user->contact_no)
             $response = Http::post('https://api.semaphore.co/api/v4/messages', [
-                'apikey' => '32971e8b7fde1d99e3b829236db19043',
+                'apikey' => 'c5a7b2b3099bd6768aeccc057052f5ad',
                 'number' => $user->contact_no,
-                'message' => "Your payment has been received",
+                'message' => "Pumasok na ang bayad mo",
                 'sendername' => 'SEMAPHORE'
             ]);
        
