@@ -9,11 +9,10 @@
     <a href="{{ route('clients.create') }}" class="btn btn-primary">Create</a>
     <div class="card card-bordered card-preview mt-2">
         <div class="card-inner">
-            <table class="datatable-init nowrap table">
+            <table class="datatable-init-export nowrap table" data-export-title="Export">
                 <thead>
                     <tr>
                         <th>Full Name</th>
-                        <th>Email</th>
                         <th>Birthdate</th>
                         <th>Civil Status</th>
                         <th>Contact #</th>
@@ -27,7 +26,6 @@
                                     {{  $client->full_name }}
                                 </a>
                             </td>
-                            <td>{{  $client->email }}</td>
                             <td>{{  $client->profile->birthdate }}</td>
                             <td>{{  $client->profile->civil_status }}</td>
                             <td>{{  $client->contact_no }}</td>
@@ -39,3 +37,6 @@
     </div>
 </div> 
 @endsection
+@push('scripts')
+<script src="{{ asset('assets/js/libs/datatable-btns.js?ver=3.0.0') }}"></script>
+@endpush

@@ -9,7 +9,7 @@
     <div class="card card-bordered card-preview mt-2 bg-info">
         <div class="card-inner">
             <div class="preview-block">
-                <span class="preview-title-lg overline-title">Lender</span>
+                <span class="preview-title-lg overline-title">User</span>
                 <form class="row gy-4" action="{{ route('lenders.update', ['lender' => $lender]) }}" method="POST">
                     @csrf
                     @method('PUT')
@@ -22,6 +22,17 @@
                             </ul>
                         </div>
                     @endif
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label class="form-label" for="position">Position</label>
+                            <div class="form-control-wrap">
+                                <div class="form-icon form-icon-right">
+                                    <em class="icon ni ni-user"></em>
+                                </div>
+                                <input type="text" class="form-control" id="position" placeholder="Position" value="{{ $lender->position }}" name="position" required/>
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-4">
                         <div class="form-group">
                             <label class="form-label" for="first_name">First Name</label>

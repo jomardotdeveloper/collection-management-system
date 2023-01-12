@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('first_name');
             $table->string('middle_name')->nullable();
+            $table->string('position')->nullable();
             $table->string('last_name');
             $table->string('contact_no')->nullable();
             $table->enum('role', ["admin", "lender", "loaner"])->default("admin");

@@ -12,11 +12,22 @@
     @endif
     <div class="card card-bordered card-preview mt-2">
         <div class="card-inner">
-            <table class="datatable-init nowrap table">
+            <table class="datatable-init-export nowrap table" data-export-title="Export">
                 <thead>
                     <tr>
                         <th>Loan ID</th>
-                        <th>Client</th>
+                        <th>Full Name</th>
+                        <th>Area Name</th>
+                        <th>Birthdate</th>
+                        <th>Age</th>
+                        <th>Birthplace</th>
+                        <th>Co-Maker</th>
+                        <th>Address</th>
+                        <th>Contact #</th>
+                        <th>Total Repayment Weeks</th>
+                        <th>Date Approved</th>
+                        <th>Amount Release</th>
+                        <th>Loan Cycle</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -28,6 +39,39 @@
                                 </a>
                             </td>
                             <td>{{ $loan->user->full_name }}</td>
+                            <td>
+                                {{ $loan->area_name }}
+                            </td>
+                            <td>
+                                {{ $loan->user->profile->birthdate }}
+                            </td>
+                            <td>
+                                {{ $loan->user->profile->age }}
+                            </td>
+                            <td>
+                                {{ $loan->user->profile->birthplace  }}
+                            </td>
+                            <td>
+                                {{ $loan->spouse_full_name }}
+                            </td>
+                            <td>
+                                {{ $loan->user->profile->full_address }}
+                            </td>
+                            <td>
+                                {{ $loan->user->contact_no }}
+                            </td>
+                            <td>
+                                {{ $loan->total_repayment_week }}
+                            </td>
+                            <td>
+                                {{ $loan->created_at }}
+                            </td>
+                            <td>
+                                {{ $loan->amount_of_release }}
+                            </td>
+                            <td>
+                                {{ $loan->cycle_no }}
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
@@ -36,3 +80,6 @@
     </div>
 </div> 
 @endsection
+@push('scripts')
+<script src="{{ asset('assets/js/libs/datatable-btns.js?ver=3.0.0') }}"></script>
+@endpush

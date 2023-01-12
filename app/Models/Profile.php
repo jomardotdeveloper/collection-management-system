@@ -31,4 +31,9 @@ class Profile extends Model
     {
         return Carbon::parse($this->birthdate)->age;
     }
+
+    public function getFullAddressAttribute()
+    {
+        return "{$this->street}, {$this->barangay}, {$this->city}, {$this->province}, {$this->zip}";
+    }
 }

@@ -23,39 +23,6 @@
                     @endif
                     <div class="col-4">
                         <div class="form-group">
-                            <label class="form-label" for="email">Email</label>
-                            <div class="form-control-wrap">
-                                <div class="form-icon form-icon-right">
-                                    <em class="icon ni ni-mail"></em>
-                                </div>
-                                <input type="email" class="form-control" id="email" placeholder="Email" name="email" required/>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="form-group">
-                            <label class="form-label" for="password">Password</label>
-                            <div class="form-control-wrap">
-                                <div class="form-icon form-icon-right">
-                                    <em class="icon ni ni-lock"></em>
-                                </div>
-                                <input type="password" class="form-control" id="password" placeholder="Password" name="password" required/>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="form-group">
-                            <label class="form-label" for="password_confirmation">Confirm Password</label>
-                            <div class="form-control-wrap">
-                                <div class="form-icon form-icon-right">
-                                    <em class="icon ni ni-lock"></em>
-                                </div>
-                                <input type="password" class="form-control" id="password_confirmation" placeholder="Password" name="password_confirmation" required/>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="form-group">
                             <label class="form-label" for="first_name">First Name</label>
                             <div class="form-control-wrap">
                                 <div class="form-icon form-icon-right">

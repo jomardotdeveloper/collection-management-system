@@ -50,6 +50,7 @@ class LenderController extends Controller
             "contact_no" => $request->contact_no,
             "role" => "lender",
             "email" => $request->email,
+            "position" => $request->position,
             "password" => Hash::make($request->password),
         ]);
 
@@ -95,6 +96,7 @@ class LenderController extends Controller
             "middle_name" => $request->middle_name,
             "last_name" => $request->last_name,
             "contact_no" => $request->contact_no,
+            'position' => $request->position
         ];
 
         if($request->password != "DEFAULT_PASSWORD") {

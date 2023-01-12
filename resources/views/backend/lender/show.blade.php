@@ -17,7 +17,7 @@
     <div class="card card-bordered card-preview mt-2 bg-info">
         <div class="card-inner">
             <div class="preview-block">
-                <span class="preview-title-lg overline-title">Lender</span>
+                <span class="preview-title-lg overline-title">User</span>
                 <form class="row gy-4" action="#" method="POST">
                     @if(Session::has("type"))
                     <div class="alert alert-success" role="alert">
@@ -35,6 +35,17 @@
                                     <em class="icon ni ni-mail"></em>
                                 </div>
                                 <input type="email" class="form-control" id="email" placeholder="Email" name="email"  value="{{ $lender->email }}" disabled />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label class="form-label" for="position">Position</label>
+                            <div class="form-control-wrap">
+                                <div class="form-icon form-icon-right">
+                                    <em class="icon ni ni-user"></em>
+                                </div>
+                                <input type="text" class="form-control" id="position" placeholder="Position" value="{{ $lender->position }}" name="position" disabled/>
                             </div>
                         </div>
                     </div>

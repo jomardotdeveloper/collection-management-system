@@ -3,7 +3,7 @@
 <div class="nk-block nk-block-lg">
     <div class="nk-block-head">
         <div class="nk-block-head-content">
-            <h4 class="nk-block-title">Lenders</h4>
+            <h4 class="nk-block-title">Users</h4>
         </div>
     </div>
     <a href="{{ route('lenders.create') }}" class="btn btn-primary">Create</a>

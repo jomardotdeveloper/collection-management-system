@@ -22,17 +22,7 @@
                             </ul>
                         </div>
                     @endif
-                    <div class="col-4">
-                        <div class="form-group">
-                            <label class="form-label" for="password">Password</label>
-                            <div class="form-control-wrap">
-                                <div class="form-icon form-icon-right">
-                                    <em class="icon ni ni-lock"></em>
-                                </div>
-                                <input type="password" class="form-control" id="password" placeholder="Password" name="password" value="DEFAULT_PASSWORD" required/>
-                            </div>
-                        </div>
-                    </div>
+                    
                     <div class="col-4">
                         <div class="form-group">
                             <label class="form-label" for="first_name">First Name</label>

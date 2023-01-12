@@ -32,14 +32,12 @@
                             </ul>
                         </div>
                     @endif
+                    
                     <div class="col-4">
                         <div class="form-group">
-                            <label class="form-label" for="user_id">Clients</label>
+                            <label class="form-label">Clients</label>
                             <div class="form-control-wrap">
-                                <div class="form-icon form-icon-right">
-                                    <em class="icon ni ni-users"></em>
-                                </div>
-                                <select name="user_id" id="user_id" class="form-control" required onchange="ref()">
+                                <select class="form-select js-select2" name="user_id" id="user_id" data-search="on" required onchange="ref()">
                                     @foreach ($clients as $client)
                                         @if(!$first_client)
                                         <option value="{{ $client->id }}">
@@ -60,6 +58,7 @@
                                 </select>
                             </div>
                         </div>
+                      
                     </div>
                     <div class="col-4">
                         <div class="form-group">

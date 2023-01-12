@@ -38,10 +38,10 @@ class LoanerController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            "email" => "unique:users|required",
-            "password" => "required|confirmed",
-        ]);
+        // $validated = $request->validate([
+        //     "email" => "unique:users|required",
+        //     "password" => "required|confirmed",
+        // ]);
 
 
         $user = User::create([
@@ -50,8 +50,8 @@ class LoanerController extends Controller
             "last_name" => $request->last_name,
             "contact_no" => $request->contact_no,
             "role" => "loaner",
-            "email" => $request->email,
-            "password" => Hash::make($request->password),
+            "email" => User::latest()->first()->id + 1,
+            "password" => Hash::make("123"),
         ]);
 
         $profile = Profile::create([
@@ -113,11 +113,11 @@ class LoanerController extends Controller
             "contact_no" => $request->contact_no,
         ];
 
-        if($request->password != "DEFAULT_PASSWORD") {
-            $values["password"] = Hash::make($request->password);
-        }
+        // if($request->password != "DEFAULT_PASSWORD") {
+        //     $values["password"] = Hash::make($request->password);
+        // }
 
-        $client->update($values);
+        // $client->update($values);
 
         $client->profile->update([
             "birthdate" => $request->birthdate,

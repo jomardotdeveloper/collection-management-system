@@ -9,7 +9,7 @@
     <div class="card card-bordered card-preview mt-2 bg-info">
         <div class="card-inner">
             <div class="preview-block">
-                <span class="preview-title-lg overline-title">Lender</span>
+                <span class="preview-title-lg overline-title">User</span>
                 <form class="row gy-4" action="{{ route('lenders.store') }}" method="POST">
                     @csrf
                     @if($errors->any())
@@ -51,6 +51,17 @@
                                     <em class="icon ni ni-lock"></em>
                                 </div>
                                 <input type="password" class="form-control" id="password_confirmation" placeholder="Password" name="password_confirmation" required/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label class="form-label" for="position">Position</label>
+                            <div class="form-control-wrap">
+                                <div class="form-icon form-icon-right">
+                                    <em class="icon ni ni-user"></em>
+                                </div>
+                                <input type="text" class="form-control" id="position" placeholder="Position" name="position" required/>
                             </div>
                         </div>
                     </div>

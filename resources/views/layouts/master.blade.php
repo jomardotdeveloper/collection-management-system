@@ -52,7 +52,7 @@
                                 <li class="nk-menu-item">
                                     <a href="{{ route('lenders.index') }}" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-users"></em></span>
-                                        <span class="nk-menu-text">Lenders</span>
+                                        <span class="nk-menu-text">Users</span>
                                     </a>
                                 </li>
                                 @endif
@@ -70,7 +70,7 @@
                                 <li class="nk-menu-item">
                                     <a href="{{ route('loans.index') }}" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-wallet"></em></span>
-                                        <span class="nk-menu-text">Loans</span>
+                                        <span class="nk-menu-text">Records</span>
                                     </a>
                                 </li>
                                 <li class="nk-menu-item">
@@ -196,6 +196,7 @@
     <script src="{{ asset('assets/js/bundle.js?ver=3.0.0') }}"></script>
     <script src="{{ asset('assets/js/scripts.js?ver=3.0.0') }}"></script>
     <script src="{{ asset('assets/js/charts/gd-default.js?ver=3.0.0') }}"></script>
+    @stack("scripts")
     <script>
 		function logout(){
 			document.getElementById("logoutForm").submit();

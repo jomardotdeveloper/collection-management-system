@@ -25,17 +25,7 @@
                     </div>
 
                     @endif
-                    <div class="col-4">
-                        <div class="form-group">
-                            <label class="form-label" for="email">Email</label>
-                            <div class="form-control-wrap">
-                                <div class="form-icon form-icon-right">
-                                    <em class="icon ni ni-mail"></em>
-                                </div>
-                                <input type="email" class="form-control" id="email" placeholder="Email" name="email" disabled value="{{ $client->email }}"/>
-                            </div>
-                        </div>
-                    </div>
+                   
                     <div class="col-4">
                         <div class="form-group">
                             <label class="form-label" for="first_name">First Name</label>

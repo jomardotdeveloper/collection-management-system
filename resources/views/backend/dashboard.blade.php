@@ -30,7 +30,7 @@
             <div class="card-inner">
                 <div class="card-title-group align-start mb-2">
                     <div class="card-title">
-                        <h6 class="title">Lenders</h6>
+                        <h6 class="title">Users</h6>
                     </div>
                 </div>
                 <div class="align-end gy-3 gx-5 flex-wrap flex-md-nowrap flex-lg-wrap flex-xxl-nowrap">
