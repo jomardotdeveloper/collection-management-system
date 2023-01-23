@@ -28,7 +28,7 @@
                                 <div class="form-icon form-icon-right">
                                     <em class="icon ni ni-user"></em>
                                 </div>
-                                <select name="user_id" id="user_id" required class="form-control" onchange="clientOnChange()">
+                                <select  class="form-select js-select2" name="user_id" id="user_id" data-search="on" required onchange="clientOnChange()">
                                     @foreach ($clients as $client)
                                         <option value="{{ $client->id }}">
                                             {{ $client->full_name }}
