@@ -42,6 +42,7 @@
                                 <li class="nk-menu-heading">
                                     <h6 class="overline-title text-primary-alt">Main</h6>
                                 </li>
+                                @if(strtoupper(auth()->user()->position) != "COLLECTOR")
                                 <li class="nk-menu-item">
                                     <a href="{{ route('dashboard') }}" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-dashlite"></em></span>
@@ -53,6 +54,12 @@
                                     <a href="{{ route('lenders.index') }}" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-users"></em></span>
                                         <span class="nk-menu-text">Users</span>
+                                    </a>
+                                </li>
+                                <li class="nk-menu-item">
+                                    <a href="{{ route('logs.index') }}" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-pen"></em></span>
+                                        <span class="nk-menu-text">Logs</span>
                                     </a>
                                 </li>
                                 @endif
@@ -79,6 +86,14 @@
                                         <span class="nk-menu-text">Payments</span>
                                     </a>
                                 </li>
+                                @else
+                                <li class="nk-menu-item">
+                                    <a href="{{ route('payments.index') }}" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-money"></em></span>
+                                        <span class="nk-menu-text">Payments</span>
+                                    </a>
+                                </li>
+                                @endif
                                     
                             </ul><!-- .nk-menu -->
                         </div><!-- .nk-sidebar-menu -->

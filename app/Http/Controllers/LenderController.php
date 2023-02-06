@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Log;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -54,6 +55,11 @@ class LenderController extends Controller
             "password" => Hash::make($request->password),
         ]);
 
+        Log::create([
+            "user_id" => auth()->user()->id,
+            "action" => "Created a new user with the name of " . $user->full_name,
+        ]);
+
         return redirect()->route("lenders.show", ["lender" => $user])->with([
             "message" => "Lender created successfully",
             "type" => "success"
@@ -104,6 +110,11 @@ class LenderController extends Controller
         }
 
         $lender->update($values);
+
+        Log::create([
+            "user_id" => auth()->user()->id,
+            "action" => "Update a user with the name of " . $lender->full_name,
+        ]);
         
         return redirect()->route("lenders.show", ["lender" => $lender])->with([
             "message" => "Lender updated successfully",
@@ -119,7 +130,10 @@ class LenderController extends Controller
      */
     public function destroy(User $lender)
     {
-        
+        Log::create([
+            "user_id" => auth()->user()->id,
+            "action" => "Deleted a user with the name of " . $lender->full_name,
+        ]);
         $lender->delete();
         return redirect()->route("lenders.index");
     }

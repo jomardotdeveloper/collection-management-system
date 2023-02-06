@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Log;
 use App\Models\Profile;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -64,6 +65,11 @@ class LoanerController extends Controller
             "province" => $request->province,
             "zip" => $request->zip,
             "user_id" => $user->id,
+        ]);
+
+        Log::create([
+            "user_id" => auth()->user()->id,
+            "action" => "Created a new client with the name of " . $user->full_name,
         ]);
 
 
@@ -130,6 +136,12 @@ class LoanerController extends Controller
             "zip" => $request->zip,
         ]);
 
+        Log::create([
+            "user_id" => auth()->user()->id,
+            "action" => "Update a client with the name of " . $client->full_name,
+        ]);
+        
+
         return redirect()->route("clients.show", ["client" => $client])->with([
             "message" => "Client updated successfully",
             "type" => "success"
@@ -144,6 +156,11 @@ class LoanerController extends Controller
      */
     public function destroy(User $client)
     {
+        Log::create([
+            "user_id" => auth()->user()->id,
+            "action" => "Deleted a client with the name of " . $client->full_name,
+        ]);
+        
         $client->delete();
         return redirect()->route("clients.index")->with([
             "message" => "Client deleted successfully",

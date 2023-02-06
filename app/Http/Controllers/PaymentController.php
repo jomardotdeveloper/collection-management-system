@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Log;
 use App\Models\Payment;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -66,11 +67,18 @@ class PaymentController extends Controller
             'financing_agreement_id' => $financing_agreement_id->id
         ]);
 
+        Log::create([
+            "user_id" => auth()->user()->id,
+            "action" => "Created payment for " . $user->full_name,
+        ]);
+
+
+        $amount = $request->payment_amount;
         if($user->contact_no)
             $response = Http::post('https://api.semaphore.co/api/v4/messages', [
-                'apikey' => 'c5a7b2b3099bd6768aeccc057052f5ad',
+                'apikey' => '598ca2c43db1f7c078d5fd74ffe524d4',
                 'number' => $user->contact_no,
-                'message' => "Natanggap na po ang iyong bayad ng Asa Philippines Magpet. Maraming Salamat.",
+                'message' => "Natanggap na po ang iyong bayad na nasa halagang $amount pesos ng Asa Philippines Magpet. Maraming Salamat.",
                 'sendername' => 'SEMAPHORE'
             ]);
        

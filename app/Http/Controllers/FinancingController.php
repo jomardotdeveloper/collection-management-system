@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\FinancingAgreement;
+use App\Models\Log;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -128,6 +129,12 @@ class FinancingController extends Controller
             'user_id' => $request->get("user_id"),
         ]);
         $first_client = User::find($request->get("user_id"));
+
+        Log::create([
+            "user_id" => auth()->user()->id,
+            "action" => "Created a new loan record for " . $first_client->full_name,
+        ]);
+
         return redirect()->route("loans.show", ["loan" => $financing, "first_client" => $first_client])->with([
             "message" => "Record created successfully",
             "type" => "success"

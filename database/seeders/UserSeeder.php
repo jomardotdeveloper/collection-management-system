@@ -23,6 +23,6 @@ class UserSeeder extends Seeder
             "last_name" => "Admin",
             "contact_no" => "1234567890",
         ]);
-
+        
     }
 }
